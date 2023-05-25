@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+            background-color: black;
+            --nav-height: 75px;
+            padding-top: var(--nav-height);
+            user-select: none;
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar{width:  0px;}
+        ::-webkit-scrollbar-track{background:transparent;}
+        ::-webkit-scrollbar-thumb {background:transparent;}
+        .nav{
+            width: 100%;
+            height: var(--nav-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: black;
+            display:flex;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .nav--hidden {
+            transform: translateY(calc(-1 * var(--nav-height)));
+            box-shadow: none;
+        }
+        #typing-text {
+            font-size: 35px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: orange;
+            left: 20px;
+            padding: 10px;
+        }
+        #typing-text1 {
+            font-size: 20px;
+            color: white;
+            left: 20px;
+            padding: 10px;
+        }
+        #typing-text2 {
+            font-size: 20px;
+            color: white;
+            left: 20px;
+            text-align: center;
+            padding: 10px;
+        }
+        #typing-text-skills {
+            font-size: 35px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color:cornflowerblue;
+            left: 20px;
+            padding: 10px;
+        }
+        #typing-text-project {
+            font-size: 35px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color:yellow;
+            left: 20px;
+            padding: 10px;
+        }
+        #typing-text-contact {
+            font-size: 35px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color:teal;
+            left: 20px;
+            padding: 10px;
+        }
+        #skillscreen{
+            display: block;
+        }
+        .know{
+            width: 500px;
+            margin: 60px auto;
+            color: #fff;
+        }
+        .know li{
+            list-style-type: none;
+        }
+        .bar{
+            background-color: #353b48;
+            display: block;
+            height: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .bar span{
+            height: 20px;
+            float: left;
+            background: linear-gradient(135deg, rgba(236,0,140,1)0%, rgba(252,103,103,1)100%);
+        }
+        .html{
+            width: 95%;
+            animation: html 3s;
+        }
+        .css{
+            width: 60%;
+            animation: css 3s;
+        }
+        .javascript{
+            width: 90%;
+            animation: javascript 3s;
+        }
+        .php{
+            width: 50%;
+            animation: php 3s;
+        }
+        .mysql{
+            width: 80%;
+            animation: mysql 3s;
+        }
+        .python{
+            width: 60%;
+            animation: python 3s;
+        }
+        @keyframes html{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 95%;
+            }
+        }
+        @keyframes css{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 60%;
+            }
+        }
+        @keyframes javascript{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 90%;
+            }
+        }
+        @keyframes php{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 50%;
+            }
+        }
+        @keyframes mysql{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 80%;
+            }
+        }
+        @keyframes python{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 60%;
+            }
+        }
+        .projectscreen{
+            display: block;
+        }
+        .contactscreen{
+            display: block;
+        }
+        .name{
+            position: absolute;
+            align-items: center;
+            width: 500px;
+            height: 40px;
+            border: transparent;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: white;
+            outline: transparent;
+            text-align: center;
+            left: 30%;
+        }
+        .mail{
+            position: absolute;
+            align-items: center;
+            width: 500px;
+            height: 40px;
+            border: transparent;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: white;
+            outline: transparent;
+            text-align: center;
+            left: 30%;
+        }
+        .message{
+            position: absolute;
+            align-items: center;
+            width: 500px;
+            height: 200px;
+            border: transparent;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: white;
+            outline: transparent;
+            text-align: center;
+            resize: none;
+            left: 30%;
+        }
+        .button{
+            position: absolute;
+            align-items: center;
+            width: 300px;
+            height: 40px;
+            border: transparent;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: purple;
+            color: white;
+            outline: transparent;
+            text-align: center;
+            left: 38%;
+        }
+        .main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: -42vw -4vh 0px 0px #fff,25vw -41vh 0px 0px #fff,-20vw 49vh 0px 1px #fff,5vw 40vh 1px 1px #fff,29vw 19vh 1px 0px #fff,-44vw -13vh 0px 0px #fff,46vw 41vh 0px 1px #fff,-3vw -45vh 0px 1px #fff,47vw 35vh 1px 0px #fff,12vw -8vh 1px 0px #fff,-34vw 48vh 1px 1px #fff,32vw 26vh 1px 1px #fff,32vw -41vh 1px 1px #fff,0vw 37vh 1px 1px #fff,34vw -26vh 1px 0px #fff,-14vw -49vh 1px 0px #fff,-12vw 45vh 0px 1px #fff,-44vw -33vh 0px 1px #fff,-13vw 41vh 0px 0px #fff,-36vw -11vh 0px 1px #fff,-23vw -24vh 1px 0px #fff,-38vw -27vh 0px 1px #fff,16vw -19vh 0px 0px #fff,28vw 33vh 1px 0px #fff,-49vw -4vh 0px 0px #fff,16vw 32vh 0px 1px #fff,36vw -18vh 1px 0px #fff,-25vw -30vh 1px 0px #fff,-23vw 24vh 0px 1px #fff,-2vw -35vh 1px 1px #fff,-25vw 9vh 0px 0px #fff,-15vw -34vh 0px 0px #fff,-8vw -19vh 1px 0px #fff,-20vw -20vh 1px 1px #fff,42vw 50vh 0px 1px #fff,-32vw 10vh 1px 0px #fff,-23vw -17vh 0px 0px #fff,44vw 15vh 1px 0px #fff,-40vw 33vh 1px 1px #fff,-43vw 8vh 0px 0px #fff,-48vw -15vh 1px 1px #fff,-24vw 17vh 0px 0px #fff,-31vw 50vh 1px 0px #fff,36vw -38vh 0px 1px #fff,-7vw 48vh 0px 0px #fff,15vw -32vh 0px 0px #fff,29vw -41vh 0px 0px #fff,2vw 37vh 1px 0px #fff,7vw -40vh 1px 1px #fff,15vw 18vh 0px 0px #fff,25vw -13vh 1px 1px #fff,-46vw -12vh 1px 1px #fff,-18vw 22vh 0px 0px #fff,23vw -9vh 1px 0px #fff,50vw 12vh 0px 1px #fff,45vw 2vh 0px 0px #fff,14vw -48vh 1px 0px #fff,23vw 43vh 0px 1px #fff,-40vw 16vh 1px 1px #fff,20vw -31vh 0px 1px #fff,-17vw 44vh 1px 1px #fff,18vw -45vh 0px 0px #fff,33vw -6vh 0px 0px #fff,0vw 7vh 0px 1px #fff,-10vw -18vh 0px 1px #fff,-19vw 5vh 1px 0px #fff,1vw 42vh 0px 0px #fff,22vw 48vh 0px 1px #fff,39vw -8vh 1px 1px #fff,-6vw -42vh 1px 0px #fff,-47vw 34vh 0px 0px #fff,-46vw 19vh 0px 1px #fff,-12vw -32vh 0px 0px #fff,-45vw -38vh 0px 1px #fff,-28vw 18vh 1px 0px #fff,-38vw -46vh 1px 1px #fff,49vw -6vh 1px 1px #fff,-28vw 18vh 1px 1px #fff,10vw -24vh 0px 1px #fff,-5vw -11vh 1px 1px #fff,33vw -8vh 1px 0px #fff,-16vw 17vh 0px 0px #fff,18vw 27vh 0px 1px #fff,-8vw -10vh 1px 1px #fff;
+  
+  /* stars were too big with the layers above but left the code in case no one cares  -- as in, if noone's just that  one other loner who actually cares    */
+  
+  box-shadow: 24vw 9vh 1px 0px #fff,12vw -24vh 0px 1px #fff,-45vw -22vh 0px 0px #fff,-37vw -40vh 0px 1px #fff,29vw 19vh 0px 1px #fff,4vw -8vh 0px 1px #fff,-5vw 21vh 1px 1px #fff,-27vw 26vh 1px 1px #fff,-47vw -3vh 1px 1px #fff,-28vw -30vh 0px 1px #fff,-43vw -27vh 0px 1px #fff,4vw 22vh 1px 1px #fff,36vw 23vh 0px 0px #fff,-21vw 24vh 1px 1px #fff,-16vw 2vh 1px 0px #fff,-16vw -6vh 0px 0px #fff,5vw 26vh 0px 0px #fff,-34vw 41vh 0px 0px #fff,1vw 42vh 1px 1px #fff,11vw -13vh 1px 1px #fff,48vw -8vh 1px 0px #fff,22vw -15vh 0px 0px #fff,45vw 49vh 0px 0px #fff,43vw -27vh 1px 1px #fff,20vw -2vh 0px 0px #fff,8vw 22vh 0px 1px #fff,39vw 48vh 1px 1px #fff,-21vw -11vh 0px 1px #fff,-40vw 45vh 0px 1px #fff,11vw -30vh 1px 0px #fff,26vw 30vh 1px 0px #fff,45vw -29vh 0px 1px #fff,-2vw 18vh 0px 0px #fff,-29vw -45vh 1px 0px #fff,-7vw -27vh 1px 1px #fff,42vw 24vh 0px 0px #fff,45vw -48vh 1px 0px #fff,-36vw -18vh 0px 0px #fff,-44vw 13vh 0px 1px #fff,36vw 16vh 0px 1px #fff,40vw 24vh 0px 0px #fff,18vw 11vh 0px 0px #fff,-15vw -23vh 1px 0px #fff,-24vw 48vh 0px 1px #fff,27vw -45vh 1px 0px #fff,-2vw -24vh 0px 1px #fff,-15vw -28vh 0px 0px #fff,-43vw 13vh 1px 0px #fff,7vw 27vh 1px 0px #fff,47vw 5vh 0px 0px #fff,-45vw 15vh 1px 1px #fff,-5vw -28vh 0px 1px #fff,38vw 25vh 1px 1px #fff,-39vw -1vh 1px 0px #fff,5vw 0vh 1px 0px #fff,49vw 13vh 0px 0px #fff,48vw 10vh 0px 1px #fff,19vw -28vh 0px 0px #fff,4vw 7vh 0px 0px #fff,21vw 21vh 1px 1px #fff,-15vw -15vh 0px 1px #fff,-6vw -42vh 1px 0px #fff,-15vw 48vh 1px 1px #fff,-23vw 25vh 1px 1px #fff,-48vw 25vh 0px 1px #fff,-31vw -19vh 0px 1px #fff,4vw 37vh 1px 1px #fff,-43vw 28vh 0px 0px #fff,3vw -25vh 0px 1px #fff,-39vw 14vh 0px 1px #fff,-40vw 31vh 0px 1px #fff,35vw -36vh 1px 1px #fff,16vw 49vh 0px 0px #fff,6vw 39vh 0px 0px #fff,3vw -35vh 0px 1px #fff,-44vw -2vh 1px 0px #fff,-6vw 21vh 1px 0px #fff,48vw 9vh 1px 1px #fff,-43vw 30vh 1px 1px #fff,29vw -12vh 1px 1px #fff,-48vw 13vh 1px 0px #fff,-42vw 32vh 1px 1px #fff,34vw 15vh 1px 1px #fff,29vw -37vh 1px 1px #fff,28vw 2vh 0px 0px #fff;
+  animation: zoom 16s alternate infinite; 
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+.navmobile{
+    display: none;
+}
+@media(max-width:600px){
+    .nav{
+        display: none;
+    }
+    .name{
+            position: absolute;
+            align-items: center;
+            width: 300px;
+            height: 40px;
+            border: transparent;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: white;
+            outline: transparent;
+            text-align: center;
+            left:15%;
+        }
+        .mail{
+            position: absolute;
+            align-items: center;
+            width: 300px;
+            height: 40px;
+            border: transparent;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: white;
+            outline: transparent;
+            text-align: center;
+            left: 15%;
+        }
+        .message{
+            position: absolute;
+            align-items: center;
+            width: 300px;
+            height: 200px;
+            border: transparent;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: white;
+            outline: transparent;
+            text-align: center;
+            resize: none;
+            left: 15%;
+        }
+        .button{
+            position: absolute;
+            align-items: center;
+            width: 300px;
+            height: 40px;
+            border: transparent;
+            border-radius: 10px;
+            border-color: transparent;
+            background-color: purple;
+            color: white;
+            outline: transparent;
+            text-align: center;
+            left: 16%;
+        }
+        .know{
+            width: 300px;
+            margin: 60px auto;
+            color: #fff;
+        }
+        .navmobile{
+            width: 100%;
+            height: var(--nav-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: black;
+            display:flex;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .navmobile--hidden {
+            transform: translateY(calc(-1 * var(--nav-height)));
+            box-shadow: none;
+        }
+}
+    </style>
+    <head>
+        <title>Portfolio</title>
+    </head>
+    <body>
+        <nav class="nav" id="nav">
+            <span style="color:white;font-size: 30px;left:20px;position: fixed;top: 20px;">Portfolio</span>
+            <a draggable="false" class="home" href="#homescreen" style="text-decoration: none;color:white;font-size:20px;right:320px;position: fixed;top: 30px;">Home</a>
+            <a draggable="false" class="skills" href="#skillscreen" style="text-decoration: none;color:white;font-size:20px;right:220px;position: fixed;top: 30px;">Skills</a>
+            <a draggable="false" class="project" href="#projectscreen" style="text-decoration: none;color:white;font-size:20px;right:120px;position: fixed;top: 30px;">Project</a>
+            <a draggable="false" class="contact" href="#contactscreen" style="text-decoration: none;color:white;font-size:20px;right:20px;position: fixed;top: 30px;">Contact</a>
+        </nav>
+        <nav class="navmobile" id="navmobile">
+            <span style="color:white;font-size: 30px;left:35%;position: fixed;top: 20px;">Portfolio</span>
+        </nav>
+            <div class="homescreen" id="homescreen">
+                <div id="typing-text"><br/>Hai!, I'm Santhosh</div>
+                <div id="typing-text1">
+                    <span><br/>Professional Fullstack Development Freelancer Delivering Affordable and Spectacular Websites Are you in search of a highly skilled and cost-effective freelancer to<br/><br/>
+                    bring your website ideas to life? Look no further! I am a dedicated and experienced fullstack developer, specializing in crafting exceptional websites that exceed<br/><br/>
+                    client expectations, all while maintaining an affordable pricing structure. Comprehensive Understanding of Front-end and Back-end Technologies With a strong<br/><br/>
+                    background in fullstack development, I possess a comprehensive understanding of both front-end and back-end technologies. From designing visually stunning user<br/><br/>
+                    interfaces to implementing robust and efficient server-side functionality, I have the expertise to create websites that not only look amazing but also perform<br/><br/>
+                    flawlessly. Seamless Website Development Lifecycle My services encompass the entire website development lifecycle, ensuring a seamless and efficient process<br/><br/>
+                    from start to finish. Beginning with a thorough analysis of your requirements and objectives, I work closely with you to develop a tailored solution that aligns<br/><br/>
+                    perfectly with your vision. Leveraging the latest industry practices and frameworks, I construct responsive and mobile-friendly websites that captivate your target<br/><br/>
+                    audience across all devices and platforms. High-Quality Work at an<br/><br/>
+                    Affordable Cost What sets me apart is my commitment to providing high-quality work at an affordable cost. I understand the importance of delivering exceptional<br/><br/>value to my clients, and I strive to optimize development processes to reduce overheads<br/><br/>
+                    without compromising on quality. By engaging my services, you can rest assured that you will receive an outstanding website that not only fulfills your needs but<br/><br/>
+                    also fits within your budgetary constraints. Client Satisfaction and Timely Delivery Client satisfaction is at the forefront of my work ethic. I maintain open lines of<br/><br/>communication throughout the project, ensuring that your feedback and input are incorporated seamlessly. Additionally, I prioritize meeting deadlines and adhering to<br/><br/>project milestones, guaranteeing a timely delivery of your website. Contact me today, and let's collaborate to create a breathtaking website that showcases your<br/><br/>
+                    unique brand while keeping your costs in check.</span></div>
+            </div>
+            <div id="skillscreen" class="skillscreen">
+                <div class="main"></div>
+                    <div id="typing-text-skills"><br/><br/>Skills</div>
+                    <div class="know" id="know">
+                        <li id="html"><h1>HTML</h1>
+                            <span class="bar"><span class="html"></span></span>
+                        </li>
+                        <li id="css"><h1>CSS</h1>
+                            <span class="bar"><span class="css"></span></span>
+                        </li>
+                        <li id="javascript"><h1>JAVASCRIPT</h1>
+                            <span class="bar"><span class="javascript"></span></span>
+                        </li>
+                        <li id="php"><h1>PHP</h1>
+                            <span class="bar"><span class="php"></span></span>
+                        </li>
+                        <li id="mysql"><h1>MySQL</h1>
+                            <span class="bar"><span class="mysql"></span></span>
+                        </li>
+                        <li id="python"><h1>PYTHON</h1>
+                            <span class="bar"><span class="python"></span></span>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="projectscreen" id="projectscreen">
+            <div class="typing-text-project" id="typing-text-project"><br/>Project</div>
+            <div id="typing-text2"><br/>We didn't done any projects now!</div>
+        </div>
+        <div class="contactscreen" id="contactscreen">
+            <div class="typing-text-contact" id="typing-text-contact"><br/>Contact</div><br/>
+            <form action="https://formsubmit.co/9404729a145b87f08" method="POST" autocomplete="off" id="form">
+                <input type="text" class="name" id="name" placeholder="What's your name?" required><br/><br/><br/><br/>
+                <input type="email" class="mail" id="mail" placeholder="What's your mail id?" required><br/><br/><br/><br/>
+                <textarea class="message" id="message" placeholder="Type to contact me for build your website" required></textarea><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <button class="button" id="button">Send</button><br/><br/><br/>
+            </form>
+        </div>
+    </body>
+    <script>
+        {
+        const nav = document.querySelector(".nav");
+        let lastScrollY = window.scrollY;
+        window.addEventListener("scroll", () => {
+            if (lastScrollY < window.scrollY) {
+            nav.classList.add("nav--hidden");
+            } else {
+            nav.classList.remove("nav--hidden");
+            }
+            lastScrollY = window.scrollY;
+        });
+        }
+        {
+        const nav = document.querySelector(".navmobile");
+        let lastScrollY = window.scrollY;
+        window.addEventListener("scroll", () => {
+            if (lastScrollY < window.scrollY) {
+            nav.classList.add("nav--hidden");
+            } else {
+            nav.classList.remove("nav--hidden");
+            }
+            lastScrollY = window.scrollY;
+        });
+        }
+    </script>
+</html>

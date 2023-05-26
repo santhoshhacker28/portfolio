@@ -416,7 +416,7 @@
         <div class="contactscreen" id="contactscreen">
             
             <div class="typing-text-contact" id="typing-text-contact"><br/>Contact<br/><br/>
-                <form action="https://formsubmit.co/santhosh2852006@gmail.com" method="POST" autocomplete="off" id="form">
+                <form action="https://formsubmit.co/9404729a145b87f084710a267e40b04c" method="POST" autocomplete="off" id="form">
                     <input type="text" class="name" id="name" placeholder="What's your name?" style="font-style: oblique;" required><br/><br/>
                     <input type="email" class="mail" id="mail" placeholder="What's your mail id?" style="font-style: oblique;" required><br/><br/>
                     <textarea class="message" id="message" placeholder="Type to contact me for build your website" style="font-style: oblique;font-size:large;" required></textarea><br/><br/><br/><br/><br/><br/>
@@ -557,5 +557,9 @@ window.onload = function () {
 
         }
         bg();
+        window.addEventListener("pageshow",()=>{
+            document.getElementById("name").value="";
+            document.getElementById("mail").value="";
+        });
     </script>
 </html>

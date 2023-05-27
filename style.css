@@ -1,0 +1,342 @@
+body{
+    background-color: black;
+    --nav-height: 75px;
+    user-select: none;
+    padding-top: var(--nav-height);
+    scroll-behavior: smooth;
+    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+::-webkit-scrollbar{width:  0px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb {background:transparent;}
+.nav{
+    width: 100%;
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    display:flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+.nav--hidden {
+    transform: translateY(calc(-1 * var(--nav-height)));
+    box-shadow: none;
+}
+#typing-text {
+    font-size: 35px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: orange;
+    left: 20px;
+    padding: 10px;
+}
+#typing-text1 {
+    font-size: 20px;
+    color: white;
+    left: 20px;
+    padding: 10px;
+}
+#typing-text2 {
+    font-size: 20px;
+    color: white;
+    left: 20px;
+    text-align: center;
+    padding: 10px;
+}
+#typing-text-skills {
+    font-size: 35px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:cornflowerblue;
+    left: 20px;
+    padding: 10px;
+}
+#typing-text-project {
+    font-size: 35px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:yellow;
+    left: 20px;
+    padding: 10px;
+}
+#typing-text-contact {
+    height: 580px;
+    font-size: 35px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:violet;
+    text-align: center;
+    padding: 10px;
+}
+#skillscreen{
+    display: block;
+}
+.know{
+    width: 500px;
+    margin: 60px auto;
+    color: #fff;
+}
+.know li{
+    list-style-type: none;
+}
+.bar{
+    background-color: #353b48;
+    display: block;
+    height: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.bar span{
+    height: 20px;
+    float: left;
+    background: linear-gradient(135deg, rgba(236,0,140,1)0%, rgba(252,103,103,1)100%);
+}
+.html{
+    width: 95%;
+    animation: html 3s;
+}
+.css{
+    width: 60%;
+    animation: css 3s;
+}
+.javascript{
+    width: 90%;
+    animation: javascript 3s;
+}
+.php{
+    width: 50%;
+    animation: php 3s;
+}
+.mysql{
+    width: 80%;
+    animation: mysql 3s;
+}
+.python{
+    width: 60%;
+    animation: python 3s;
+}
+@keyframes html{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 95%;
+    }
+}
+@keyframes css{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 60%;
+    }
+}
+@keyframes javascript{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+}
+@keyframes php{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 50%;
+    }
+}
+@keyframes mysql{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 80%;
+    }
+}
+@keyframes python{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 60%;
+    }
+}
+.projectscreen{
+    display: grid;
+    width: 100%;
+    height: 40vh;
+    animation: changeBg 10s linear infinite;
+    background-color: purple;
+}
+@keyframes changeBg{
+    0%{
+        background-color: purple;
+    }
+    20%{
+        background-color: blue;
+    }
+    40%{
+        background-color: green;
+    }
+    60%{
+        background-color: purple;
+    }
+    80%{
+        background-color: purple;
+    }
+    100%{
+        background-color: purple;
+    }
+}
+.contactscreen{
+    display: block;
+}
+.name{
+    position: absolute;
+    align-items: center;
+    width: 500px;
+    height: 40px;
+    border: transparent;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: white;
+    outline: transparent;
+    text-align: center;
+    left: 32%;
+}
+.mail{
+    position: absolute;
+    align-items: center;
+    width: 500px;
+    height: 40px;
+    border: transparent;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: white;
+    outline: transparent;
+    text-align: center;
+    left: 32%;
+}
+.message{
+    position: absolute;
+    align-items: center;
+    width: 500px;
+    height: 200px;
+    border: transparent;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: white;
+    outline: transparent;
+    text-align: center;
+    resize: none;
+    left: 32%;
+}
+.button{
+    position: absolute;
+    align-items: center;
+    width: 300px;
+    height: 40px;
+    border: transparent;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: purple;
+    color: white;
+    outline: transparent;
+    text-align: center;
+    left: 40%;
+}
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
+.navmobile{
+    display: none;
+}
+@media(max-width:1000px){
+    .nav{
+    display: none;
+    }
+    .name{
+        position: absolute;
+        align-items: center;
+        width: 300px;
+        height: 40px;
+        border: transparent;
+        border-radius: 10px;
+        border-color: transparent;
+        background-color: white;
+        outline: transparent;
+        text-align: center;
+        left:10%;
+    }
+    .mail{
+        position: absolute;
+        align-items: center;
+        width: 300px;
+        height: 40px;
+        border: transparent;
+        border-radius: 10px;
+        border-color: transparent;
+        background-color: white;
+        outline: transparent;
+        text-align: center;
+        left: 10%;
+    }
+    .message{
+        position: absolute;
+        align-items: center;
+        width: 300px;
+        height: 200px;
+        border: transparent;
+        border-radius: 10px;
+        border-color: transparent;
+        background-color: white;
+        outline: transparent;
+        text-align: center;
+        resize: none;
+        left: 10%;
+    }
+    .button{
+        position: absolute;
+        align-items: center;
+        width: 300px;
+        height: 40px;
+        border: transparent;
+        border-radius: 10px;
+        border-color: transparent;
+        background-color: purple;
+        color: white;
+        outline: transparent;
+        text-align: center;
+        left: 10%;
+    }
+    .know{
+        width: 300px;
+        margin: 60px auto;
+        color: #fff;
+    }
+    .navmobile{
+        width: 100%;
+        height: var(--nav-height);
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: black;
+        display:flex;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s;
+    }
+    .navmobile--hidden {
+        transform: translateY(calc(-1 * var(--nav-height)));
+        box-shadow: none;
+    }
+}

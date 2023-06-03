@@ -305,7 +305,7 @@ body{
         background-color: white;
         outline: transparent;
         text-align: center;
-        left: 0%;
+        left: 5%;
     }
     .mail{
         position: absolute;
@@ -318,7 +318,7 @@ body{
         background-color: white;
         outline: transparent;
         text-align: center;
-        left: 0%;
+        left: 5%;
     }
     .message{
         position: absolute;
@@ -332,7 +332,7 @@ body{
         outline: transparent;
         text-align: center;
         resize: none;
-        left: 0%;
+        left: 5%;
     }
     .button{
         position: absolute;

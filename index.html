@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Portfolio</title>
     </head>
     <body>
@@ -17,7 +18,15 @@
         </nav>
         <nav class="navmobile" id="navmobile">
             <span style="color:white;font-size: 30px;left:35%;position: fixed;top: 20px;">Portfolio</span>
+            <span class="material-icons" id="menu" style="right:20px; position: fixed;color: white; top: 20px;font-size: 30px;cursor: pointer;">menu</span>
         </nav>
+        <div class="list" id="list">
+            <span class="material-icons" id="close" style="right:20px; position: fixed;color: white; top: 20px;font-size: 30px;cursor: pointer;">close</span>
+            <a draggable="false" id="home1" class="home" href="#homescreen" style="text-decoration: none;color:white;font-size:20px;right:50px;position: fixed;">Home</a><br/><br/><br/><br/>
+            <a draggable="false" id="skills1" class="skills" href="#skillscreen" style="text-decoration: none;color:white;font-size:20px;right:50px;position: fixed;">Skills</a><br/><br/><br/><br/>
+            <a draggable="false" id="project1" class="project" href="#projectscreen" style="text-decoration: none;color:white;font-size:20px;right:50px;position: fixed;">Project</a><br/><br/><br/><br/>
+            <a draggable="false" id="contact1" class="contact" href="#contactscreen" style="text-decoration: none;color:white;font-size:20px;right:50px;position: fixed;">Contact</a><br/><br/><br/><br/>
+        </div>
             <div class="homescreen" id="homescreen">
                 <div id="typing-text"><br/>Hai!, I'm Santhosh</div>
                 <div id="typing-text1">
@@ -25,10 +34,10 @@
                     <li>Comprehensive understanding of front-end and back-end technologies for visually stunning and high-performing websites.</li><br/>
                     <li>Seamless website development lifecycle, from thorough analysis to tailored solutions using the latest industry practices and frameworks.</li><br/>
                     <li>Commitment to high-quality work at an affordable cost, optimizing development processes without compromising on quality.</li><br/>
-                    <li>Client satisfaction and timely delivery with open communication, incorporating feedback and meeting project milestones.</li></i></div>
+                    <li>Client satisfaction and timely delivery with open communication, incorporating feedback and meeting project milestones.</li></i></div><br/><br/>
             </div>
                 <div id="skillscreen" class="skillscreen">
-                        <div id="typing-text-skills"><br/><br/>Skills</div>
+                        <div id="typing-text-skills">Skills</div>
                         <div class="know" id="know">
                             <li id="html"><h1>HTML</h1>
                                 <span class="bar"><span class="html"></span></span>
@@ -48,20 +57,25 @@
                             <li id="python"><h1>PYTHON</h1>
                                 <span class="bar"><span class="python"></span></span>
                             </li>
-                        </div>
+                            <li id="react"><h1>REACT JS</h1>
+                                <span class="bar"><span class="react"></span></span>
+                            </li>
+                        </div><br/>
                 </div>
         <div class="projectscreen" id="projectscreen">
-            <div class="typing-text-project" id="typing-text-project"><br/>Project</div>
+            <div class="typing-text-project" id="typing-text-project">Project</div>
             <div id="typing-text2"><br/>We didn't done any projects now!</div>
         </div>
         <div class="contactscreen" id="contactscreen">
             <div class="typing-text-contact" id="typing-text-contact"><br/>Contact<br/><br/>
-                <form action="https://formsubmit.co/3ff6eacfefff1ee6c2008413381e3287" method="POST" autocomplete="off" id="form">
-                    <input type="text" class="name" id="name" name="Name" placeholder="What's your name?" style="font-style: oblique;" required><br/><br/>
-                    <input type="email" class="mail" id="mail" name="Mail" placeholder="What's your mail id?" style="font-style: oblique;" required><br/><br/>
-                    <textarea class="message" id="message" name="Message" placeholder="Type to contact me for build your website" style="font-style: oblique;font-size:medium;" required></textarea><br/><br/><br/><br/><br/><br/>
-                    <button class="button" id="button">Send</button>
-                </form>
+                <div class="enter" id="enter">
+                    <form action="https://formsubmit.co/3ff6eacfefff1ee6c2008413381e3287" method="POST" autocomplete="off" id="form">
+                        <input type="text" onkeypress="string(event)" class="name" id="name" name="Name" placeholder="What's your name?" style="font-style: oblique;"><br/><br/>
+                        <input type="email" class="mail" id="mail" name="Mail" placeholder="What's your mail id?" style="font-style: oblique;"><br/><br/>
+                        <textarea class="message" id="message" name="Message" placeholder="Type to contact me for build your website" style="font-style: oblique;font-size:medium;"></textarea><br/><br/><br/><br/><br/><br/>
+                        <button disabled="disabled" class="button" id="button">Send</button>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="main"></div>

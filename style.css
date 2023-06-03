@@ -297,7 +297,6 @@ body{
     .name{
         position: absolute;
         width: 300px;
-        display: inline-block;
         margin: auto;
         height: 40px;
         border: transparent;
@@ -306,12 +305,11 @@ body{
         background-color: white;
         outline: transparent;
         text-align: center;
-        left: 10%;
+        left: 20%;
     }
     .mail{
         position: absolute;
         width: 300px;
-        display: inline-block;
         margin: auto;
         height: 40px;
         border: transparent;
@@ -320,12 +318,11 @@ body{
         background-color: white;
         outline: transparent;
         text-align: center;
-        left: 10%;
+        left: 20%;
     }
     .message{
         position: absolute;
         width: 300px;
-        display: inline-block;
         margin: auto;
         height: 200px;
         border: transparent;
@@ -335,12 +332,11 @@ body{
         outline: transparent;
         text-align: center;
         resize: none;
-        left: 10%;
+        left: 20%;
     }
     .button{
         position: absolute;
         width: 250px;
-        display: inline-block;
         margin: auto;
         height: 40px;
         border: transparent;
@@ -350,7 +346,7 @@ body{
         color: white;
         outline: transparent;
         text-align: center;
-        left: 15%;
+        left: 25%;
     }
     .know{
         width: 300px;

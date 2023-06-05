@@ -33,7 +33,6 @@
     var button1=document.getElementById("button");
     var enter=document.getElementById("enter");
     var mailcheck= /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@.[a-zA-Z0-9-]+.(?:\.[a-zA-Z0-9-]+)*$/;
-    name1.focus();
     enter.addEventListener('input',()=>{
         if(name1.value.length>=2&&message1.value.length>=3&& mail1.value.length>=3 && mail1.value.match(mailcheck)){
           button1.removeAttribute('disabled');
@@ -42,22 +41,6 @@
           button1.setAttribute('disabled','disabled');
           button1.style.backgroundColor='plum';
     }});
-    name1.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            var length=mail1.value.length;
-            mail1.setSelectionRange(length, length);
-            mail1.focus();
-        }
-    });
-    mail1.addEventListener("keypress", function(event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            var length=message1.value.length;
-            message1.setSelectionRange(length, length);
-            message1.focus();
-        }
-    });
     function string(evt){
         var int=String.fromCharCode(evt.which);
         if(!(/[a-z A-Z]/.test(int))){
